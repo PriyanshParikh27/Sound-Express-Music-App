@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <style>
+    .album-image {
+      width: 200px;
+      /* Set the width of the image */
+      height: 200px;
+      /* Set the height of the image */
+      object-fit: cover;
+      /* Ensures the image fits nicely within the specified dimensions */
+      border-radius: 8px;
+      /* Optional: adds rounded corners */
+      display: block;
+      margin: 0 auto;
+      /* Center the image within its container */
+    }
+  </style>
+  <a href="/albums/new" class="btn btn-dark">New Album</a>
+  <div class="row">
+    <h1>Albums</h1>
+    </br>
+    {{#each data}}
+    <div class="col-sm-5">
+      <div class="card">
+        <img src="{{albumCover}}" class="card-img-top album-image" alt="..."> <!-- Add album-image class -->
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <h6 class="card-title">{{artist}}</h6>
+          <p class="card-text">{{year}}</p>
+          <a href="/songs/{{albumID}}" class="btn btn-primary">Play</a>
+          {{#if genreID}}
+          <a href="/albums?genre={{genreID}}" class="btn btn-warning">{{genreID}}</a>
+          {{/if}}
+          <a href="/albums/{{albumID}}" class="btn btn-secondary">More Info</a>
+          <a href="/albums/delete/{{albumID}}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="col-sm-5">
+      <div class="card">
+        <h4>NO DATA</h4>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
