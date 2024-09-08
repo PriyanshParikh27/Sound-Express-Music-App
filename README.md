@@ -9,7 +9,7 @@
 
 
 ## Local Development
-1. Clone this repo - `git clone https://github.com/PriyanshParikh27/SoundExpress-Music-app.git`
+1. Clone this repo - `git clone https://github.com/PriyanshParikh27/Sound-Express-Music-app.git`
 2. Copy `sample.env` as `.env` and customize as needed with Cloudinary and ElephantSQL Keys - `cp sample.env .env`
 3. Install npm packages - `npm install`
 4. Run local express server - `nodemon server.js`
